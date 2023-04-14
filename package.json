@@ -1,0 +1,12 @@
+{
+  "name": "yape-challenge-proto",
+  "version": "1.0.0",
+  "description": "Proto files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Miguel Angel Cueva Lezameta",
+  "license": "AGPL"
+}

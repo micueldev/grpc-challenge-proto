@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package transaction;
+
+service TransactionService {
+  rpc CreateTransaction (CreateTransactionRequest) returns (TransactionResponse) {}
+  rpc FindOne (FindOneRequest) returns (TransactionResponse) {}
+}
+
+message TransactionTypeData {
+  int32 id = 1;
+  string name = 2;
+}
+
+message TransactionData {
+  string id = 1;
+  TransactionTypeData transactionType = 2;
+  string transactionStatus = 3;
+  double value = 4;
+  string createdAt = 5;
+}
+
+message TransactionResponse {
+  int32 code = 1;
+  string error = 2;
+  repeated string message = 3;
+  TransactionData data = 4;
+}
+
+// CreateTransaction
+
+message CreateTransactionRequest {
+  string accountExternalIdDebit = 1;
+  string accountExternalIdCredit = 2;
+  int32 transactionTypeId = 3;
+  double value = 4;
+}
+
+// FindOne
+
+message FindOneRequest {
+  string id = 1;
+}
